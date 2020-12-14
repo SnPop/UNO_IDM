@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="UNO"/>
+	<feature automatic="selected" name="Configuration"/>
+	<feature automatic="selected" name="Main"/>
+	<feature automatic="selected" name="Visibilité"/>
+	<feature automatic="unselected" name="Visible"/>
+	<feature manual="selected" name="Cachée"/>
+	<feature automatic="selected" name="Nombre de mains de départ"/>
+	<feature manual="selected" name="1_main"/>
+	<feature automatic="unselected" name="Plusieurs_mains"/>
+	<feature automatic="selected" name="Nombre de cartes de départ"/>
+	<feature manual="selected" name="7 cartes"/>
+	<feature automatic="unselected" name="4 cartes"/>
+	<feature automatic="unselected" name="7 à 15 cartes"/>
+	<feature automatic="selected" manual="selected" name="Nombre de Talons de départ"/>
+	<feature manual="selected" name="1_talon"/>
+	<feature automatic="unselected" name="3_talons"/>
+	<feature automatic="selected" name="Rotation"/>
+	<feature manual="selected" name="Sens des aiguilles d'une montre"/>
+	<feature automatic="unselected" name="Sens contraire des aiguilles d'une montre"/>
+	<feature automatic="unselected" name="Sens de distribution"/>
+	<feature automatic="selected" name="Equipe"/>
+	<feature manual="selected" name="Solo"/>
+	<feature automatic="unselected" name="Equipes"/>
+	<feature automatic="selected" name="Déroulement"/>
+	<feature automatic="selected" name="Piocher"/>
+	<feature automatic="selected" name="Nombre de carte"/>
+	<feature manual="selected" name="1_carte"/>
+	<feature automatic="unselected" name="jusqu'à_3"/>
+	<feature automatic="selected" name="Jouer"/>
+	<feature manual="selected" name="Obligatoire"/>
+	<feature automatic="unselected" name="Optionelle"/>
+	<feature manual="selected" name="Piocher seulement si on ne pet pas jouer"/>
+	<feature automatic="selected" name="cartes"/>
+	<feature manual="selected" name=" Cumul effet"/>
+	<feature name="Jouer plusieurs cartes"/>
+	<feature name="Suites"/>
+	<feature name="suite royale"/>
+	<feature name="couleur"/>
+	<feature name="nombre"/>
+	<feature name="carte Uno"/>
+	<feature name="plus"/>
+	<feature name="plus 2"/>
+	<feature name="plus 4"/>
+	<feature automatic="selected" name="Changer de mains"/>
+	<feature manual="selected" name="Sept"/>
+	<feature manual="selected" name="Zero"/>
+	<feature name="Couper le jeu avec la même cate"/>
+	<feature name="contre"/>
+	<feature automatic="selected" name="+4"/>
+	<feature automatic="selected" name="+4 seulement si rien d'autre"/>
+	<feature manual="selected" name="Challenge +4"/>
+	<feature manual="selected" name="Interdit de finir avec un +4"/>
+	<feature name="Pénalité"/>
+	<feature name="commentaire intempestif "/>
+	<feature name="se tromper"/>
+	<feature name="Tribunal Populaire si litige"/>
+	<feature name="Limite de temps"/>
+	<feature automatic="selected" name="Fin"/>
+	<feature automatic="selected" name="Fin de manche"/>
+	<feature manual="selected" name="Dire Uno"/>
+	<feature automatic="selected" name="Fin de partie"/>
+	<feature automatic="selected" name="Vainqueur"/>
+	<feature automatic="unselected" name="nombre de manches gagnées"/>
+	<feature manual="selected" name="moins de points"/>
+	<feature automatic="unselected" name="dernier joueur battle royale"/>
+	<feature automatic="unselected" name="plus de points"/>
+</configuration>

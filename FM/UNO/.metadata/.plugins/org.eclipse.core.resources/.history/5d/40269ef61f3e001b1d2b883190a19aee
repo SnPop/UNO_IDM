@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="legendposition" value="28,248"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="UNO">
+			<and abstract="true" name="Configuration de départ">
+				<and abstract="true" name="Main">
+					<alt abstract="true" name="Visibilité">
+						<feature name="Visible"/>
+						<feature name="Cachée"/>
+					</alt>
+					<alt abstract="true" name="Nombre de cartes de départ">
+						<feature name="7_cartes"/>
+						<feature name="X_cartes"/>
+					</alt>
+					<alt abstract="true" name="Nombre de mains de départ">
+						<feature name="1_main"/>
+						<feature name="Plusieurs_mains"/>
+					</alt>
+				</and>
+				<alt abstract="true" name="Nombre de Talons">
+					<feature name="1_talon"/>
+					<feature name="3_talons"/>
+				</alt>
+				<and abstract="true" name="Equipe">
+					<feature name="Solo"/>
+					<feature name="Equipes"/>
+				</and>
+			</and>
+			<or abstract="true" name="Pénalité">
+				<feature name="Pas dit UNO"/>
+				<feature name="Challenge +4"/>
+			</or>
+			<and abstract="true" name="Déroulement">
+				<alt abstract="true" name="Piocher">
+					<feature name="1_carte"/>
+					<feature name="jusqu'à_3"/>
+				</alt>
+				<feature name="Cumul"/>
+				<feature name="Bluff"/>
+			</and>
+			<and abstract="true" name="Fin de partie">
+				<alt abstract="true" name="Vainqueur">
+					<feature name="nombre de manches gagnées"/>
+					<feature name="moins de points"/>
+					<feature name="plus de points"/>
+				</alt>
+				<alt abstract="true" name="Condition">
+					<feature name="premier joueur à 500 points"/>
+					<feature name="manches"/>
+					<feature name="reste plus q'un joueur battle royale"/>
+				</alt>
+			</and>
+		</and>
+	</struct>
+</extendedFeatureModel>

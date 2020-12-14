@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="variations_uno">
+			<alt mandatory="true" name="talon">
+				<feature name="une_carte"/>
+				<feature name="quatre_cartes"/>
+			</alt>
+			<feature name="temps_limite"/>
+			<or abstract="true" name="depose_des_cartes">
+				<feature name="cumul_plus_2"/>
+				<feature name="cumul_plus_4"/>
+				<feature name="suite_classique"/>
+				<feature name="suite_royale"/>
+				<feature name="interception"/>
+				<feature name="plus_4_ou_rien"/>
+			</or>
+			<and mandatory="true" name="main">
+				<alt abstract="true" mandatory="true" name="visibilite">
+					<graphics key="collapsed" value="false"/>
+					<feature name="visible"/>
+					<feature name="invisible"/>
+				</alt>
+				<alt abstract="true" mandatory="true" name="nombre_de_piles">
+					<feature name="une_pile"/>
+					<feature name="trois_piles"/>
+				</alt>
+			</and>
+			<or abstract="true" name="regles_speciales_cartes">
+				<feature name="carte_uno"/>
+				<feature name="plus_4_non_contestable"/>
+				<feature name="carte_0"/>
+				<feature name="carte_7"/>
+			</or>
+			<alt mandatory="true" name="pioche">
+				<alt name="une_fois">
+					<feature name="peut_jouer"/>
+					<feature name="passe_tour"/>
+				</alt>
+				<feature name="jusqua_trois_fois"/>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>suite_classique</var>
+				<var>interception</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

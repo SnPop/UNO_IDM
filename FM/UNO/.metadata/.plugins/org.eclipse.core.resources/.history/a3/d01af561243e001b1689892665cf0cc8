@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Variabilites_UNO">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" mandatory="true" name="Configuration_Depart">
+				<and mandatory="true" name="main">
+					<alt mandatory="true" name="etat_main">
+						<feature name="visible"/>
+						<feature name="cachee"/>
+					</alt>
+					<alt mandatory="true" name="nb_mains">
+						<feature name="une_main"/>
+						<feature name="trois_mains"/>
+					</alt>
+					<alt mandatory="true" name="nb_cartes_main">
+						<feature name="main_de_quatre_cartes"/>
+						<feature name="main_de_cinq_cartes"/>
+						<feature name="main_de_sept_cartes"/>
+					</alt>
+				</and>
+				<alt mandatory="true" name="nb_talons">
+					<feature name="un_talon"/>
+					<feature name="trois_talons"/>
+				</alt>
+				<feature name="riviere"/>
+				<feature name="tps_limite"/>
+			</and>
+			<and abstract="true" mandatory="true" name="Manche">
+				<graphics key="collapsed" value="false"/>
+				<and name="inversion">
+					<feature name="avec_carte_inversion"/>
+					<feature name="avec_carte_sept"/>
+				</and>
+				<and name="tourner_les_mains">
+					<feature name="avec_carte_zero"/>
+					<feature name="avec_carte_uno"/>
+				</and>
+				<alt mandatory="true" name="nb_de_cartes_jouables_par_joueur">
+					<feature name="une_par_une"/>
+					<feature name="plusieurs_a_la_fois_autorise"/>
+				</alt>
+				<and name="carte_1_a_9">
+					<feature name="suites"/>
+					<feature name="suites_royales"/>
+					<and name="interception">
+						<feature name="meme_couleur"/>
+						<feature name="meme_nb"/>
+					</and>
+				</and>
+				<and mandatory="true" name="pioche">
+					<alt mandatory="true" name="nb_cartes_a_piocher">
+						<feature name="une_seule"/>
+						<feature name="au_plus_trois"/>
+					</alt>
+					<alt mandatory="true" name="jouer_apres_pioche">
+						<feature name="droit_de_jouer"/>
+						<feature name="pas_droit_de_jouer"/>
+					</alt>
+				</and>
+				<and name="cumul">
+					<feature name="cumul_plus_2"/>
+					<and name="cumul_wild_cards">
+						<feature name="cumul_plus_4"/>
+						<feature name="cumul_carte_couleur"/>
+						<feature name="cumul_carte_uno"/>
+					</and>
+				</and>
+				<and name="contestations">
+					<feature name="inter_contestable"/>
+					<feature name="plus4_contestable"/>
+				</and>
+			</and>
+			<and abstract="true" mandatory="true" name="Fin_Manche">
+				<and name="conditions_fin">
+					<feature mandatory="true" name="dire_uno_obligatoire"/>
+				</and>
+				<and mandatory="true" name="points_manche">
+					<alt mandatory="true" name="vainqueur_manche">
+						<feature name="manche_gagnee"/>
+						<feature name="vm_pts_selon_carte_adversaires"/>
+						<feature name="vm_zero_pts"/>
+					</alt>
+					<alt mandatory="true" name="perdants_manche">
+						<feature name="pm_zero_pts"/>
+						<and name="pm_pts_selon_cartes_restantes">
+							<feature name="elimination_si_500_points"/>
+						</and>
+					</alt>
+				</and>
+			</and>
+			<and abstract="true" mandatory="true" name="Fin_Partie">
+				<alt mandatory="true" name="vainqueur_total">
+					<feature name="score_le_plus_grd"/>
+					<feature name="nb_manche_gagnees"/>
+					<feature name="moins_de_500_pts"/>
+					<feature name="score_le_plus_petit"/>
+				</alt>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>interception</var>
+				<disj>
+					<var>suites</var>
+					<var>suites_royales</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>une_par_une</var>
+				<not>
+					<disj>
+						<var>suites</var>
+						<var>suites_royales</var>
+					</disj>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>vm_pts_selon_carte_adversaires</var>
+				<var>pm_zero_pts</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

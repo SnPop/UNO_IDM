@@ -1,0 +1,42 @@
+NewRootFeature : UNO :: _NewRootFeature ;
+
+UNO : Configuration [Déroulement] Fin :: _UNO ;
+
+Configuration : Main Nombre de Talons de départ Rotation Equipe :: _Configuration ;
+
+Main : Visibilité Nombre de mains de départ Nombre de cartes de départ :: _Main ;
+
+Visibilité : [Cachée] :: _Visibilité ;
+
+Nombre de mains de départ : [1_main] :: _Nombre de mains de départ ;
+
+Nombre de cartes de départ : [7 cartes] :: _Nombre de cartes de départ ;
+
+Nombre de Talons de départ : [1_talon] :: _Nombre de Talons de départ ;
+
+Rotation : [Sens des aiguilles d'une montre] :: _Rotation ;
+
+Equipe : [Solo] :: _Equipe ;
+
+Déroulement : Piocher cartes [Pénalité] :: _Déroulement ;
+
+Piocher : Nombre de carte [Piocher seulement si on ne peut pas jouer] :: _Piocher ;
+
+Nombre de carte : [1_carte] :: _Nombre de carte ;
+
+cartes : [+4] :: _cartes ;
+
++4 : [+4 seulement si rien d'autre] :: _+4 ;
+
+Pénalité : [contestations] :: _Pénalité ;
+
+contestations : [plus_4] :: _contestations ;
+
+Fin : Fin de manche Fin de partie :: _Fin ;
+
+Fin de manche : [Dire Uno] :: _Fin de manche ;
+
+Fin de partie : Vainqueur :: _Fin de partie ;
+
+Vainqueur : [moins de points] :: _Vainqueur ;
+

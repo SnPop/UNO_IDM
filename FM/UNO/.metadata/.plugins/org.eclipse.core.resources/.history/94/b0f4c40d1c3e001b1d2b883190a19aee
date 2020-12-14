@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="legendposition" value="28,248"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="UNO">
+			<and name="Configuration de départ">
+				<and name="Main de départ">
+					<alt name="Visibilité de la main">
+						<feature name="Visible"/>
+						<feature name="Cachée"/>
+					</alt>
+					<and name="Nombre de cartes par main">
+						<feature name="7 cartes"/>
+						<feature name="4 cartes"/>
+					</and>
+				</and>
+				<feature name="Pioche"/>
+				<and name="Equipe">
+					<feature name="Solo"/>
+					<feature name="Equipes"/>
+				</and>
+			</and>
+			<and name="Déroulement">
+				<feature name="Tirer une carte"/>
+			</and>
+			<and name="Fin d'une manche">
+				<and name="Dire">
+					<feature name="Uno"/>
+					<feature name="Contre-Uno"/>
+				</and>
+			</and>
+			<alt name="Cartes spéciales">
+				<feature name="+2"/>
+				<feature name="+4"/>
+				<feature name="Joker"/>
+				<feature name="Passer"/>
+				<feature name="Inversion"/>
+				<feature name="Echange de main"/>
+			</alt>
+			<and name="Fin de partie">
+				<and name="Vainqueur">
+					<feature name="nombre de manches gagnées"/>
+					<feature name="moins de points"/>
+					<feature name="plus de points"/>
+				</and>
+				<and name="Condition">
+					<feature name="premier joueur à 500 points"/>
+					<feature name="manches"/>
+					<feature name="reste plus q'un joueur battle royale"/>
+				</and>
+			</and>
+			<and name="Pénalité">
+				<feature name="Pas dit UNO"/>
+				<feature name="Challenge +4"/>
+			</and>
+		</and>
+	</struct>
+</extendedFeatureModel>

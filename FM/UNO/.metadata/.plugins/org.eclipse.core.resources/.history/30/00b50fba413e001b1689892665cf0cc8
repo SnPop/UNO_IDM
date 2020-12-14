@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<struct>
+		<and abstract="true" mandatory="true" name="NewRootFeature">
+			<feature name="Cachée"/>
+			<feature name="1_main"/>
+			<feature name="7 cartes"/>
+			<feature name="1_talon"/>
+			<feature name="Sens des aiguilles d'une montre"/>
+			<feature name="Solo"/>
+			<feature name="Piocher seulement si on ne peut pas jouer"/>
+			<feature name="1_carte"/>
+			<feature name="+4 seulement si rien d'autre"/>
+			<feature name="plus_4"/>
+			<feature name="Dire Uno"/>
+			<feature name="moins de points"/>
+		</and>
+	</struct>
+</extendedFeatureModel>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="legendposition" value="-1263,301"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="UNO">
+			<and abstract="true" mandatory="true" name="Configuration">
+				<and abstract="true" name="Main">
+					<alt abstract="true" name="Visibilité">
+						<feature name="Visible"/>
+						<feature name="Cachée"/>
+					</alt>
+					<alt abstract="true" name="Nombre de mains de départ">
+						<graphics key="collapsed" value="false"/>
+						<feature name="1_main"/>
+						<feature name="Plusieurs_mains"/>
+					</alt>
+					<alt abstract="true" name="Nombre de cartes de départ">
+						<feature name="7 cartes"/>
+						<feature name="4 cartes"/>
+						<feature name="7 à 15 cartes"/>
+					</alt>
+				</and>
+				<alt abstract="true" name="Nombre de Talons de départ">
+					<feature name="1_talon"/>
+					<feature name="3_talons"/>
+				</alt>
+				<alt abstract="true" mandatory="true" name="Rotation">
+					<feature name="Sens des aiguilles d'une montre"/>
+					<feature name="Sens contraire des aiguilles d'une montre"/>
+					<feature name="Sens de distribution"/>
+				</alt>
+				<alt abstract="true" name="Equipe">
+					<feature name="Solo"/>
+					<feature name="Equipes"/>
+				</alt>
+			</and>
+			<and abstract="true" name="Déroulement">
+				<and abstract="true" mandatory="true" name="Piocher">
+					<alt abstract="true" mandatory="true" name="Nombre de carte">
+						<feature name="1_carte"/>
+						<feature name="jusqu'à_3"/>
+					</alt>
+					<feature name="Piocher seulement si on ne pet pas jouer"/>
+				</and>
+				<and abstract="true" name="cartes">
+					<graphics key="collapsed" value="false"/>
+					<and name=" Cumul/contre effet">
+					<feature name="cumul cartes +"/>
+				</and>
+				<or abstract="true" name="Jouer plusieurs cartes">
+					<and name="Suites">
+						<feature name="suite royale"/>
+					</and>
+					<feature name="couleur"/>
+					<feature name="nombre"/>
+					<feature name="cartes Uno"/>
+					<or name="plus">
+						<feature name="plus 2"/>
+						<feature name="plus 4"/>
+					</or>
+				</or>
+				<and abstract="true" name="Couper le jeu">
+					<and name="meme nombre">
+						<feature name="meme carte"/>
+					</and>
+				</and>
+				<and abstract="true" name="Changer de mains">
+					<or abstract="true" name="Seven_0">
+						<feature name="Sept"/>
+						<feature name="Zero"/>
+					</or>
+				</and>
+				<or abstract="true" name="+4">
+					<feature name="+4 seulement si rien d'autre"/>
+					<feature name="Interdit de finir avec un +4"/>
+				</or>
+			</and>
+			<or abstract="true" name="Pénalité">
+				<feature name="commentaire intempestif "/>
+				<or abstract="true" name="contestations">
+					<feature name="plus_4"/>
+					<feature name="se tromper"/>
+				</or>
+				<feature name="Tribunal Populaire si litige"/>
+				<feature name="Limite de temps"/>
+			</or>
+		</and>
+		<and abstract="true" name="Fin">
+			<and abstract="true" name="Fin de manche">
+				<feature name="Dire Uno"/>
+			</and>
+			<and abstract="true" name="Fin de partie">
+				<alt abstract="true" mandatory="true" name="Vainqueur">
+					<graphics key="collapsed" value="false"/>
+					<feature name="nombre de manches gagnées"/>
+					<feature name="moins de points"/>
+					<feature name="dernier joueur battle royale"/>
+					<feature name="plus de points"/>
+				</alt>
+			</and>
+		</and>
+	</and>
+</struct>
+</extendedFeatureModel>

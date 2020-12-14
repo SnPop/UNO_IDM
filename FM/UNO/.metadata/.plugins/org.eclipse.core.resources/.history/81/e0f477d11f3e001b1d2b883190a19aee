@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<struct>
+		<and abstract="true" mandatory="true" name="NewRootFeature">
+			<feature name="Cachée"/>
+			<feature name="7_cartes"/>
+			<feature name="1_main"/>
+			<feature name="1_talon"/>
+			<feature name="Solo"/>
+			<feature name="Pas dit UNO"/>
+			<feature name="Cumul"/>
+			<feature name="1_carte"/>
+			<feature name="nombre de manches gagnées"/>
+			<feature name="premier joueur à 500 points"/>
+		</and>
+	</struct>
+</extendedFeatureModel>

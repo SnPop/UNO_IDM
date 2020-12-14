@@ -1,0 +1,42 @@
+UNO : [Configuration de départ] [Déroulement] [Fin d'une manche] [Cartes spéciales] [Cumul] [Fin de partie] [Bluff] [Pénalité] :: _UNO ;
+
+Configuration de départ : [Main] [Nombre de Talons] [Equipe] :: _Configuration de départ ;
+
+Main : [Visibilité] [Nombre de cartes] [Nombre de mains] :: _Main ;
+
+Visibilité : Visible
+	| Cachée ;
+
+Nombre de cartes : 7_cartes
+	| X_cartes ;
+
+Nombre de mains : 1_main
+	| Plusieurs_mains ;
+
+Nombre de Talons : [1_talon] [3_talons] :: _Nombre de Talons ;
+
+Equipe : [Solo] [Equipes] :: _Equipe ;
+
+Déroulement : [Piocher] [NewFeature] :: _Déroulement ;
+
+Piocher : [1_carte] [jusqu'à_3] :: _Piocher ;
+
+Fin d'une manche : [Dire] :: _Fin d'une manche ;
+
+Dire : [Uno] [Contre-Uno] :: _Dire ;
+
+Cartes spéciales : +2
+	| +4
+	| Joker
+	| Passer
+	| Inversion
+	| Echange de main ;
+
+Fin de partie : [Vainqueur] [Condition] :: _Fin de partie ;
+
+Vainqueur : [nombre de manches gagnées] [moins de points] [plus de points] :: _Vainqueur ;
+
+Condition : [premier joueur à 500 points] [manches] [reste plus q'un joueur battle royale] :: _Condition ;
+
+Pénalité : [Pas dit UNO] [Challenge +4] :: _Pénalité ;
+
