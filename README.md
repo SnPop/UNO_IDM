@@ -13,7 +13,7 @@ Autheur : Shervin PEDARAN
 -> Mon feature model (FM) se trouve dans le dossier [mon FM](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO) avec les différentes configurations dans le dossier configs [mes configs](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO/configs). 
 
 Le UNO classique comporte un grand nombre de variantes, car on peut créer, rajouter, combiner autant de variables, règles donc de configurations que l'on souhaite.
-Mon FM comporte `2594` configurations possibles en partant du Uno classique.
+Mon FM comporte `2594` (change tout le temps sur eclipse) configurations possibles en partant du Uno classique.
 
 ***Q2: Inventer un DSL avec une grammaire Xtext qui permet à un utilisateur de spécifier n’importe quelle règle complète du Uno.***
 
