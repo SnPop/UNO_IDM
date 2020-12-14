@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <extendedFeatureModel>
 	<properties>
-		<graphics key="legendposition" value="-1263,301"/>
+		<graphics key="legendposition" value="-1372,18"/>
 		<graphics key="legendautolayout" value="false"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
@@ -72,16 +72,16 @@
 						</or>
 					</and>
 				</or>
-				<and abstract="true" name="Couper le jeu">
-					<and name="meme nombre">
-						<feature name="meme carte"/>
-					</and>
-				</and>
 				<and abstract="true" name="Changer de mains">
 					<or abstract="true" name="Seven_0">
 						<feature name="Sept"/>
 						<feature name="Zero"/>
 					</or>
+				</and>
+				<and abstract="true" name="Couper le jeu">
+					<and name="meme nombre">
+						<feature name="meme carte"/>
+					</and>
 				</and>
 				<or abstract="true" name="+4">
 					<feature name="+4 seulement si rien d'autre"/>
@@ -114,4 +114,12 @@
 		</and>
 	</and>
 </struct>
+<constraints>
+	<rule>
+		<imp>
+			<var>plus_4</var>
+			<var>+4 seulement si rien d'autre</var>
+		</imp>
+	</rule>
+</constraints>
 </extendedFeatureModel>

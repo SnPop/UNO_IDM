@@ -1,0 +1,84 @@
+UNO : Configuration [Déroulement] Fin :: _UNO ;
+
+Configuration : Main Nombre de Talons de départ Rotation Equipe :: _Configuration ;
+
+Main : Visibilité Nombre de mains de départ Nombre de cartes de départ :: _Main ;
+
+Visibilité : Visible
+	| Cachée ;
+
+Nombre de mains de départ : 1_main
+	| Plusieurs_mains ;
+
+Nombre de cartes de départ : 7 cartes
+	| 4 cartes
+	| 7 à 15 cartes ;
+
+Nombre de Talons de départ : 1_talon
+	| 3_talons ;
+
+Rotation : Sens des aiguilles d'une montre
+	| Sens contraire des aiguilles d'une montre
+	| Sens de distribution ;
+
+Equipe : Solo
+	| Equipes ;
+
+Déroulement : Piocher cartes Pénalité* :: _Déroulement ;
+
+Piocher : Nombre de carte [Piocher seulement si on ne peut pas jouer] :: _Piocher ;
+
+Nombre de carte : 1_carte
+	| jusqu'à_3 ;
+
+cartes : Cumul Cartes* Jouer plusieurs cartes* [Couper le jeu] [Changer de mains] +4* :: _cartes ;
+
+Cumul Cartes : effet
+	| cumul cartes ++ :: cumul cartes +_ ;
+
+cumul cartes + : Plus2
+	| Plus4 ;
+
+Jouer plusieurs cartes : Suites
+	| couleur
+	| nombre
+	| cartes Uno/Spéciales ;
+
+Suites : [suite royale] :: _Suites ;
+
+cartes Uno/Spéciales : plus* :: _cartes Uno/Spéciales ;
+
+plus : plus 2
+	| plus 4 ;
+
+Couper le jeu : [meme nombre] :: _Couper le jeu ;
+
+meme nombre : [meme carte] :: _meme nombre ;
+
+Changer de mains : Seven_0* :: _Changer de mains ;
+
+Seven_0 : Sept
+	| Zero ;
+
++4 : +4 seulement si rien d'autre
+	| Interdit de finir avec un +4 ;
+
+Pénalité : commentaire intempestif 
+	| contestations+ :: contestations_
+	| Tribunal Populaire si litige
+	| Limite de temps ;
+
+contestations : plus_4
+	| se tromper ;
+
+Fin : Fin de manche Fin de partie :: _Fin ;
+
+Fin de manche : [Dire Uno] :: _Fin de manche ;
+
+Fin de partie : Vainqueur :: _Fin de partie ;
+
+Vainqueur : nombre de manches gagnées
+	| moins de points
+	| dernier : battle royale
+	| plus de points ;
+

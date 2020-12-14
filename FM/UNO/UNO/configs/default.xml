@@ -44,15 +44,15 @@
 	<feature name="plus"/>
 	<feature name="plus 2"/>
 	<feature name="plus 4"/>
-	<feature name="Couper le jeu"/>
-	<feature name="meme nombre"/>
-	<feature name="meme carte"/>
 	<feature name="Changer de mains"/>
 	<feature name="Seven_0"/>
 	<feature name="Sept"/>
 	<feature name="Zero"/>
+	<feature name="Couper le jeu"/>
+	<feature name="meme nombre"/>
+	<feature name="meme carte"/>
 	<feature automatic="selected" name="+4"/>
-	<feature manual="selected" name="+4 seulement si rien d'autre"/>
+	<feature automatic="selected" manual="selected" name="+4 seulement si rien d'autre"/>
 	<feature name="Interdit de finir avec un +4"/>
 	<feature automatic="selected" name="Pénalité"/>
 	<feature name="commentaire intempestif "/>
