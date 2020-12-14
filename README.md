@@ -10,4 +10,4 @@ Autheur : Shervin PEDARAN
 * Fournir des configurations “folles” mais valides du jeu
 * Répondre à la question: Combien y a-t-il de variantes du Uno? 
 
--> Mon feature model (FM) se trouve dans le dossier [mon FM](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO) avec les différentes configurations dans le dossier configs [mon FM](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO/configs). 
+-> Mon feature model (FM) se trouve dans le dossier [mon FM](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO) avec les différentes configurations dans le dossier configs [mes configs](https://github.com/SnPop/UNO_IDM/tree/main/FM/UNO/UNO/configs). 
