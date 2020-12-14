@@ -14,3 +14,8 @@ Autheur : Shervin PEDARAN
 
 Le UNO classique comporte un grand nombre de variantes, car on peut créer, rajouter, combiner autant de variables, règles donc de configurations que l'on souhaite.
 Mon FM comporte `2594` configurations possibles en partant du Uno classique.
+
+***Q2: Inventer un DSL avec une grammaire Xtext qui permet à un utilisateur de spécifier n’importe quelle règle complète du Uno.***
+
+* Le DSL doit être aussi expressif que le FM ci-dessus: un utilisateur doit pouvoir spécifier autant de règles Uno que de configurations dans le FM. 
+Conseil: le langage doit être simple et rapide à utiliser 
