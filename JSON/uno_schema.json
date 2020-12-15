@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Uno-Schema",
+  "type": "object",
+  "properties": {
+    "Configuration": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Jeu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Jeu"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Nombre de talons": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "Nombre de talons"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Rotation": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "Rotation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Main": {
+              "type": "object",
+              "properties": {
+                "Nombre de cartes de depart": {
+                  "type": "string"
+                },
+                "Nombre de mains de depart": {
+                  "type": "string"
+                },
+                "Visibilite": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Nombre de cartes de depart",
+                "Nombre de mains de depart",
+                "Visibilite"
+              ]
+            }
+          },
+          "required": [
+            "Main"
+          ]
+        }
+      ]
+    },
+    "Deroulement": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Plus4": {
+              "type": "object",
+              "properties": {
+                "Plus4": {
+                  "type": "object",
+                  "properties": {
+                    "Plus4": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Plus4"
+                  ]
+                }
+              },
+              "required": [
+                "Plus4"
+              ]
+            }
+          },
+          "required": [
+            "Plus4"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Penalites": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Contestations": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Contestations"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "Penalites"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Piocher": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Nombre de carte": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Nombre de carte"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "Piocher"
+          ]
+        }
+      ]
+    },
+    "Fin": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Fin de manche": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Fin de manche"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Fin de partie Vainceur": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Fin de partie Vainceur"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "Configuration",
+    "Deroulement",
+    "Fin"
+  ]
+}
