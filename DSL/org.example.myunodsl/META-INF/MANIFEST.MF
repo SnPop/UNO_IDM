@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.example.myunodsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.example.myunodsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.example.myunodsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.example.myunodsl,
+ org.example.myunodsl.myunodsl.util,
+ org.example.myunodsl.validation,
+ org.example.myunodsl.myunodsl.impl,
+ org.example.myunodsl.serializer,
+ org.example.myunodsl.parser.antlr,
+ org.example.myunodsl.myunodsl,
+ org.example.myunodsl.parser.antlr.internal,
+ org.example.myunodsl.scoping,
+ org.example.myunodsl.services,
+ org.example.myunodsl.generator
+Import-Package: org.apache.log4j

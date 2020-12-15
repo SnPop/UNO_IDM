@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.example.myunodsl.ressources&apos; to &apos;org.example.myunodsl.ressourcestestunofile&apos;&#x0A;- Original project: &apos;org.example.myunodsl&apos;&#x0A;- Original element: &apos;org.example.myunodsl/src/org.example.myunodsl.ressources&apos;&#x0A;- Renamed element: &apos;org.example.myunodsl/src/org.example.myunodsl.ressourcestestunofile&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.example.myunodsl.ressources&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.example.myunodsl.ressources" name="org.example.myunodsl.ressourcestestunofile" qualified="false" references="true" stamp="1608006249803" textual="false" version="1.0"/>
+</session>

@@ -23,6 +23,9 @@
 	<feature automatic="selected" name="Equipe"/>
 	<feature manual="selected" name="Solo"/>
 	<feature automatic="unselected" name="Equipes"/>
+	<feature name="Nombre de Joueur"/>
+	<feature name="2"/>
+	<feature name="3-10"/>
 	<feature automatic="selected" name="Déroulement"/>
 	<feature automatic="selected" name="Piocher"/>
 	<feature automatic="selected" name="Nombre de carte"/>

@@ -1,0 +1,153 @@
+grammar org.example.myunodsl.Myunodsl with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate myunodsl "http://www.example.org/myunodsl/Myunodsl"
+
+Model:
+	uno+=Uno;
+
+Uno:
+	'Uno' '{'
+	((conf=Configuration) &
+	(deroulement=Deroulement?) &
+	(fin=Fin)) '}';
+
+	// Configuration
+Configuration:
+	'Configuration' '[' ((main=Main) & (nbtd=Nombre_de_Talons_de_depart) & (rotation=Rotation) & (nbj=Nbjoueur) &
+	(equipe=Equipe)) ']';
+
+	//
+Main:
+	'Main' '{'
+	((visibilite=Visibilite) &
+	(nbm=Nombre_de_mains_de_depart) &
+	(nbc=Nombre_de_cartes_de_depart)) '}';
+
+Visibilite:
+	'<' 'Visibilite' ':' vis=('Visible' | 'Cachée') '>';
+
+Nombre_de_mains_de_depart:
+	'<' nbm='Nombre de mains de depart' ':' main=('1 main' | 'Plusieurs mains') '>';
+
+Nombre_de_cartes_de_depart:
+	'<' nbc='Nombre de cartes de depart' ':' cartes=('7' | '4' | '7-15') 'cartes' '>';
+
+Nombre_de_Talons_de_depart:
+	'Nombre de talons' '{'
+	talion=('1 talon'
+	| '3 talons')
+	'}';
+
+Rotation:
+	'Rotation' '{'
+	s1=(('Sens des aiguilles d une montre')
+	| ('Sens contraire des aiguilles d une montre')
+	| ('Sens de distribution'))
+	'}';
+
+Nbjoueur:
+	'Nombre de joueur' ':' n=('3-10' | '2');
+
+Equipe:
+	'Jeu' ':'
+	eq=('Solo'
+	| 'Equipes');
+
+	///Deroulement
+Deroulement:
+	'Deroulement' '[' (piocher=Piocher & cartes=Cartes & (pen+=Penalite)?) ']';
+
+Piocher:
+	'Piocher' '{' (nbr=Nombre_de_carte & (optp='seulement si on ne peut pas jouer')?) '}';
+
+Nombre_de_carte:
+	'Nombre de carte' ':' ca=('1 carte' | 'jusquà 3');
+
+	//
+Cartes:
+	'cartes' '{'
+	((cc=Cumul_Cartes)? &
+	(jpc=Jouer_plusieurs_cartes)? &
+	(clj=Couper_le_jeu)? &
+	(cdm=Changer_de_mains)? &
+	(p=Plus4)?)
+	'}';
+
+Cumul_Cartes:
+	'cumul' '{'
+	(('effet')? &
+	(pl2=PLUS_DEUX)? &
+	(pl4=PLUS_QUATRE)?)
+	'}';
+
+Jouer_plusieurs_cartes:
+	'Jouer plusieurs cartes'
+	'{'
+	((s=Suites)? &
+	('couleur')? &
+	('nombre')? &
+	(cus=cartes_Uno_Speciales)?)
+	'}';
+
+Suites:
+	'Suite' (sr='suite royale')?;
+
+cartes_Uno_Speciales:
+	cuss='cartes Uno speciales' '{' p=Plus '}';
+
+Plus:
+	plus='Plus' '{' ( (pd=PLUS_DEUX)? & (k=PLUS_QUATRE)?) '}';
+
+	//
+Couper_le_jeu:
+	clj='couper le jeu' (mn=Meme_nombre)?;
+
+Meme_nombre:
+	mn='meme nombre' (mc='meme carte')?;
+
+	//
+Changer_de_mains:
+	cdm='Changer de mains' '{' (sev=Seven_0) '}';
+
+Seven_0:
+	se='Seven_0' ':' (sept='Sept')? (zero='Zero')?;
+
+Plus4:
+	pqq=PLUS_QUATRE '{' (pq=PLUS_QUATRE ss='seulement si rien d autre')? (it='Interdit de finir avec un' p=PLUS_QUATRE)? '}';
+
+Penalite:
+	'Penalites' '{'
+	(pen=Penalites)
+	'}';
+
+Penalites:
+	('commentaire intempestif')? &
+	(contestation=Contestations)? &
+	('Tribunal Populaire si litige')? &
+	('Limite de temps')? &
+	(penalite=STRING)?;
+
+Contestations:
+	c='Contestations' '{' (('<' k=PLUS_QUATRE '>')? & ('<' t='se tromper' '>')?) '}';
+
+	// Fin
+Fin:
+	f='Fin' '[' ((fdm=Fin_de_manche)? & (fdp=Fin_de_partie)) ']';
+
+Fin_de_manche:
+	fdmdu='Fin de manche :' du='Dire Uno';
+
+Fin_de_partie:
+	(fdpv='Fin de partie Vainceur :') vaiqueur=Vainqueur;
+
+Vainqueur:
+	(manches='nombre de manches gagnées')
+	| (moins='moins de points')
+	| (dernier='dernier : battle royale')
+	| (plus='plus de points');
+
+PLUS_QUATRE: p='Plus 4' | jpp='+4';
+
+PLUS_DEUX: d='Plus 2' | pf='+2'; 
+	

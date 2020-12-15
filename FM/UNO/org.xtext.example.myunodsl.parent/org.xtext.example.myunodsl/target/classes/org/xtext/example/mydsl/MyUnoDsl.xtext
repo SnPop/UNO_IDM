@@ -1,0 +1,80 @@
+grammar org.xtext.example.mydsl.MyUnoDsl with org.eclipse.xtext.common.Terminals
+
+generate myUnoDsl "http://www.xtext.org/example/mydsl/MyUnoDsl"
+
+Model:
+	uno=Configuration (deroulement=Deroulement)? fin=Fin ;
+
+Configuration : Main nbt=Nombre_de_Talons_de_depart rot=Rotation equ=Equipe;
+
+Main : visibilite=Visibilite nbm=Nombre_de_mains_de_depart nbc=Nombre_de_cartes_de_depart ;
+
+Visibilite : "Visible"	
+	| "Cachée";
+
+Nombre_de_mains_de_depart : "1" "main"
+	| "Plusieurs" "mains";
+
+Nombre_de_cartes_de_depart : "7" "cartes"
+	| "4" "cartes"
+	| "7-15" "cartes" ;
+
+Nombre_de_Talons_de_depart : "1" "talon"
+	| "3" "talons" ;
+
+Rotation : "Sens" "des" "aiguilles" "dune" "montre"
+	| "Sens" "contraire" "des" "aiguilles" "dune" "montre"
+	| "Sens" "de" "distribution" ;
+
+Equipe : "Solo"
+	| "Equipes" ;
+
+Deroulement : piocher=Piocher cartes=Cartes pen+=Penalite?;
+
+Piocher : nbr=Nombre_de_carte (optp="Piocher" "seulement" "si" "on" "ne" "peut" "pas" "jouer")?;
+
+Nombre_de_carte : "1" "carte"
+	| "jusquà" "3" ;
+
+Cartes : (cc=Cumul_Cartes)? (jpc=Jouer_plusieurs_cartes)? (clj=Couper_le_jeu)? (cdm=Changer_de_mains)? p4=Plus4;
+
+Cumul_Cartes : (eff="effet")? (ccp=Cumul_cartes_plus)?;
+
+Cumul_cartes_plus : ("Plus2")? ("Plus4")? ;
+
+Jouer_plusieurs_cartes : (s=Suites)? ("couleur")? ("nombre")? (cus=cartes_Uno_Speciales)? ;
+
+Suites : "Suite" (sr="suite_royale")?;
+
+cartes_Uno_Speciales : "cartes" "Uno" "speciales" Plus;
+
+Plus : ("plus" "2")? ("plus" "4")? ;
+
+Couper_le_jeu : (Meme_nombre)? ;
+
+Meme_nombre : ("meme" "nombre")? ("meme" "carte")?;
+
+Changer_de_mains : Seven_0 ;
+
+Seven_0 : ("Sept")? ("Zero")? ;
+
+Plus4 : ("+4" "seulement" "si" "rien" "dautre")? ("Interdit" "de" "finir" "avec" "un" "+4")? ;
+
+Penalite : ("commentaire" "intempestif")? 
+	Contestations 
+	("Tribunal" "Populaire" "si" "litige")?
+	("Limite" "de" "temps")? 
+	( penalite=STRING)?;
+	
+Contestations : ("plus" "4")? ("se" "tromper")? ;
+
+Fin : (fdm=Fin_de_manche)? fdp=Fin_de_partie ;
+
+Fin_de_manche : "Dire" "Uno";
+
+Fin_de_partie : Vainqueur ;
+
+Vainqueur : "nombre" "de" "manches" "gagnées"
+	|"moins" "de" "points"
+	| "dernier" ":" "battle" "royale"
+	| "plus" "de" "points" ;

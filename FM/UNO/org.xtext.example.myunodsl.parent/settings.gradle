@@ -1,0 +1,3 @@
+include 'org.xtext.example.myunodsl'
+include 'org.xtext.example.myunodsl.ide'
+include 'org.xtext.example.myunodsl.tests'

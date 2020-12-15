@@ -41,6 +41,10 @@
 					<feature name="Solo"/>
 					<feature name="Equipes"/>
 				</alt>
+				<alt name="Nombre de Joueur">
+					<feature name="2"/>
+					<feature name="3-10"/>
+				</alt>
 			</and>
 			<and abstract="true" name="Déroulement">
 				<and abstract="true" mandatory="true" name="Piocher">
@@ -66,7 +70,7 @@
 						<feature name="couleur"/>
 						<feature name="nombre"/>
 						<and name="cartes Uno/Spéciales">
-						<or name="plus">
+						<or abstract="true" name="plus">
 							<feature name="plus 2"/>
 							<feature name="plus 4"/>
 						</or>
