@@ -26,7 +26,7 @@ Se situe dans le dossier [DSL](https://github.com/SnPop/UNO_IDM/tree/main/DSL)
 
 ***Q3: Spécifier en JSON plusieurs règles du Uno et spécifier le schema JSON associé***
 
-Le schema se situe dans le dossier [JSON](https://github.com/SnPop/UNO_IDM/tree/main/JSON) : `uno-schema.json`.
+Le schema se situe dans le dossier [JSON](https://github.com/SnPop/UNO_IDM/tree/main/JSON) : `uno_schema.json`.
 
 Quelques variantes json qui respecte le schema: `Uno classique`, `Seven-0`, et `Progressive_Uno`.
 
