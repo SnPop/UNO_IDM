@@ -31,7 +31,7 @@ Se situe dans le dossier [JSON](https://github.com/SnPop/UNO_IDM/tree/main/JSON)
 
 ***Q4: On souhaite écrire un générateur de règles Uno (pour fournir à des joueurs en début de partie, par exemple pour éviter tout conflit). Comment développeriez-vous ce générateur avec le FM de la Q1, le DSL de la Q2, et le JSON de la Q3?***
 
-* Avec le FM : => A partir d'un fichier config du FM, on pourrait 
+* Avec le FM : => Je peut partir d'un fichier config de mon FM pour créer une nouvelle configuration/variante en choisissant aléatoirement des variables.   
 * Avec le DSL => 
 * Avec le JSON =>
 
